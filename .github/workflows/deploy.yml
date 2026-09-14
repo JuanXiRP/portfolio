@@ -42,7 +42,7 @@ jobs:
       # Pages runs Jekyll by default, which would drop the `_next` folder.
       - run: touch out/.nojekyll
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: out
 
