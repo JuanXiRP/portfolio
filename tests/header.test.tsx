@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { getDictionary } from "@/i18n/dictionaries";
+import { withBasePath } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 
 const en = getDictionary("en");
@@ -28,9 +29,11 @@ describe("Header", () => {
     renderHeader();
     const current = screen.getByRole("link", { name: "English", current: "page" });
     expect(current).toBeInTheDocument();
-    // `next/link` only knows about `trailingSlash` at build time, so accept both forms here.
-    expect(screen.getByRole("link", { name: "Español" }).getAttribute("href")).toMatch(
-      /^\/es\/?$/,
+    // The deploy workflow runs the tests with NEXT_PUBLIC_BASE_PATH set, so the
+    // expected href must go through the same helper the component uses.
+    expect(screen.getByRole("link", { name: "Español" })).toHaveAttribute(
+      "href",
+      withBasePath("/es/"),
     );
   });
 
