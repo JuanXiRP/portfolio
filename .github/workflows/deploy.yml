@@ -31,7 +31,11 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
+      # `enablement` turns Pages on (source: GitHub Actions) the first time, so
+      # a fresh fork or repo rename never fails with "Get Pages site failed".
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - run: npm ci
 
