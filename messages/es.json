@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "title": "Juan Ruiz Platón · Desarrollador de Software Junior",
+    "description": "Desarrollador de Software Junior (Java, Kotlin, React/TypeScript) afincado en Países Bajos. Software en producción en Thales y una aplicación de IA full-stack entregada de principio a fin. Disponibilidad inmediata.",
+    "ogAlt": "Juan Ruiz Platón, Desarrollador de Software Junior: Java, Kotlin, React"
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "education": "Formación",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "role": "Desarrollador de Software Junior",
+    "stack": "Java · Kotlin · React / TypeScript",
+    "tagline": "Construyo software probado y listo para producción: backends con Spring Boot, front ends en React y Android, pipelines de CI/CD e integraciones con LLM.",
+    "available": "Disponibilidad inmediata",
+    "euCitizen": "Ciudadano de la UE · sin necesidad de visado",
+    "location": "Hengelo, Países Bajos",
+    "downloadCv": "Descargar CV",
+    "viewProjects": "Ver mi trabajo",
+    "photoAlt": "Retrato de Juan Ruiz Platón"
+  },
+  "metrics": {
+    "heading": "Impacto en cifras",
+    "items": {
+      "coverage": {
+        "label": "cobertura de tests backend",
+        "context": "suites con JUnit 5 y Mockito protegiendo la lógica de negocio en Thales"
+      },
+      "accuracy": {
+        "label": "precisión de los informes",
+        "context": "herramienta de Value Stream Mapping en Spring Boot y React"
+      },
+      "stakeholders": {
+        "label": "usuarios internos",
+        "context": "que dependen de software que diseñé y entregué"
+      },
+      "devTime": {
+        "label": "tiempo de desarrollo frontend",
+        "context": "librería reutilizable de componentes y hooks en React/TypeScript"
+      }
+    }
+  },
+  "about": {
+    "heading": "Sobre mí",
+    "paragraphs": [
+      "Soy desarrollador de software junior especializado en backends con Java/Spring Boot y front ends con React/TypeScript, con experiencia nativa en Android con Kotlin y Jetpack Compose. En Thales Netherlands entregué software en producción usado por más de 60 personas dentro de la empresa, y por mi cuenta diseñé, construí y desplegué una aplicación de IA full-stack, desde el cliente Android hasta la API en la nube.",
+      "Antes del software fui entrenador personal durante seis años. Ese trabajo de cara al cliente me enseñó a escuchar con atención, explicar cosas complejas de forma sencilla y ser constante a largo plazo: hábitos que aplico en las revisiones de código, las dailies y las sesiones de pairing.",
+      "Me importa el código limpio y probado: SOLID, Clean Architecture, suites de tests con sentido y pipelines de CI que detectan regresiones antes de llegar a los usuarios. Tengo disponibilidad inmediata y ciudadanía de la UE, así que no necesito visado ni patrocinio."
+    ]
+  },
+  "experience": {
+    "heading": "Experiencia",
+    "present": "Actualidad",
+    "items": {
+      "thales": {
+        "role": "Desarrollador de Software (prácticas)",
+        "bullets": [
+          "Mejoré un 25% la precisión de los datos de reporting para más de 60 usuarios internos diseñando y entregando una herramienta de gestión de proyectos de Value Stream Mapping construida en Java/Spring Boot con frontend en React/TypeScript.",
+          "Elevé la cobertura de tests del backend al 95% construyendo suites de tests unitarios y de integración con JUnit 5 y Mockito, protegiendo la lógica de negocio frente a regresiones.",
+          "Reduje en torno a un 15% el tiempo de desarrollo frontend de nuevos módulos creando una librería reutilizable de componentes y hooks en React/TypeScript.",
+          "Automaticé los tests y el análisis estático en cada commit integrando pipelines de CI/CD con Jenkins y SonarQube, con quality gates obligatorios antes de cada merge."
+        ]
+      },
+      "trainer": {
+        "role": "Entrenador personal",
+        "bullets": [
+          "Puesto de cara al cliente antes de mi transición al desarrollo de software: coaching, comunicación clara y seguimiento a largo plazo con decenas de clientes."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "heading": "Proyectos",
+    "caseStudy": "Caso de estudio",
+    "problemHeading": "El problema",
+    "solutionHeading": "Qué construí",
+    "decisionsHeading": "Decisiones técnicas clave",
+    "architectureHeading": "Arquitectura",
+    "techHeading": "Tecnologías",
+    "moreComing": "Hay más proyectos en camino. Mientras tanto, todo lo que publico está en GitHub.",
+    "items": {
+      "hybridAi": {
+        "tagline": "Aplicación de coaching con IA full-stack",
+        "summary": "Una app Android que genera planes de entrenamiento personalizados de varias semanas con Google Gemini, respaldada por una API en Node.js desplegada en Render con MongoDB Atlas.",
+        "problem": "Los planes de entrenamiento genéricos no se adaptan a los objetivos, el material ni el horario de cada persona. Quería una app que generase un plan realmente personalizado a partir de los datos del usuario y que siguiera funcionando sin conexión.",
+        "solution": "Un cliente Android nativo (Kotlin, Jetpack Compose, Clean Architecture, MVVM, Hilt, Room, Retrofit) que se comunica con una API REST en Node.js/Express que canaliza todas las llamadas a Gemini, persiste los planes en MongoDB Atlas y está protegida con JWT y Google Sign-In.",
+        "decisions": [
+          {
+            "title": "Persistencia offline-first",
+            "text": "Room guarda los planes en el dispositivo, de modo que la app funciona sin conexión y sincroniza al recuperarla."
+          },
+          {
+            "title": "Los secretos nunca llegan al cliente",
+            "text": "Todas las llamadas de IA pasan por el backend. Las claves de API y los prompts se quedan en el servidor, tras un esquema de respuesta versionado."
+          },
+          {
+            "title": "Salida de IA determinista",
+            "text": "Gemini se invoca con un esquema de respuesta JSON y reintentos con backoff exponencial, convirtiendo texto libre del LLM en datos estructurados fiables para la app."
+          },
+          {
+            "title": "Releases protegidas",
+            "text": "Suites de tests automatizadas con Jest y análisis de seguridad con Trivy antes de cada despliegue."
+          }
+        ],
+        "architecture": {
+          "android": "App Android",
+          "androidDetail": "Kotlin · Compose · Room",
+          "api": "API Node.js / Express",
+          "apiDetail": "JWT · Google Sign-In · Render",
+          "gemini": "Google Gemini",
+          "geminiDetail": "Salida JSON estructurada",
+          "db": "MongoDB Atlas",
+          "dbDetail": "Mongoose",
+          "edgeAuth": "HTTPS + JWT",
+          "edgeAi": "Prompt / esquema JSON",
+          "edgePersist": "Planes y usuarios",
+          "diagramLabel": "Diagrama de arquitectura: la app Android llama a la API Node.js por HTTPS con un JWT; la API llama a Google Gemini con un esquema JSON y guarda planes y usuarios en MongoDB Atlas."
+        },
+        "links": {
+          "app": "Repo de la app Android",
+          "backend": "Repo de la API backend"
+        }
+      }
+    }
+  },
+  "skills": {
+    "heading": "Habilidades",
+    "subheading": "Agrupadas según cómo las uso a diario, no ordenadas por porcentajes inventados.",
+    "categories": {
+      "languages": "Lenguajes",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "mobile": "Móvil",
+      "databases": "Bases de datos",
+      "testing": "Testing",
+      "devops": "DevOps y herramientas",
+      "ai": "IA",
+      "practices": "Prácticas"
+    }
+  },
+  "education": {
+    "heading": "Formación y certificaciones",
+    "certifications": "Certificaciones",
+    "degrees": "Formación",
+    "languages": "Idiomas",
+    "hours": "{hours} horas",
+    "items": {
+      "claudeApi": {
+        "name": "Building with the Claude API",
+        "detail": "Desarrollo de aplicaciones basadas en LLM: prompting, uso de herramientas e integración de la API."
+      },
+      "aiEnterprise": {
+        "name": "AI in Enterprise App Development",
+        "detail": "Integración de IA en entornos empresariales (FP Smart Track / CaixaBank Dualiza)."
+      },
+      "hnd": {
+        "name": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma",
+        "school": "IES Julián Marías, Valladolid, España"
+      },
+      "bsc": {
+        "name": "Grado en Ciencias de la Actividad Física y del Deporte",
+        "school": "Universidade da Coruña, España"
+      }
+    },
+    "spokenLanguages": {
+      "spanish": "Español",
+      "spanishLevel": "Nativo",
+      "english": "Inglés",
+      "englishLevel": "Nivel profesional (B2)"
+    }
+  },
+  "contact": {
+    "heading": "Hablemos",
+    "text": "Estoy abierto a puestos de desarrollador de software junior en Países Bajos o en remoto dentro de la UE. El correo es la forma más rápida de contactarme; suelo responder en menos de un día.",
+    "email": "Enviar un correo",
+    "linkedin": "Conectar en LinkedIn",
+    "github": "Ver mi código",
+    "cv": "Descargar CV (PDF)"
+  },
+  "footer": {
+    "builtWith": "Hecho con Next.js, TypeScript y Tailwind CSS. Exportado estáticamente y desplegado con GitHub Actions.",
+    "source": "Ver código fuente",
+    "rights": "© {year} Juan Ruiz Platón"
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido",
+    "mainNav": "Navegación principal",
+    "themeToggle": "Cambiar tema de color",
+    "themeLight": "Cambiar a modo claro",
+    "themeDark": "Cambiar a modo oscuro",
+    "switchLocale": "Cambiar idioma",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "newTab": "se abre en una pestaña nueva"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "text": "La página que buscas no existe.",
+    "back": "Volver al inicio"
+  }
+}
